@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+        <div id="headings">
+            <h1 id="heading-text">TECH LAB</h1>
+            <h1 id="heading-text">MOBILE INNOVATION LAB </h1>
+            <h1 id="heading-text">AI WORKSHOP</h1>
+            <h1 id="heading-text">STARTUP CLINIC</h1>
+            <h1 id="heading-text">STARTUP PARENTING</h1>
+            <h1 id="heading-text">SME ACTIVATE</h1>
+            <h1 id="heading-text">REACTOR PROGRAM</h1>
+            <h1 id="heading-text">COMMUNITY HACK</h1>
+        </div>
+    <div class="hero-section">
+        <h2>Empowering Africa's public and private<br>sectors to innovate and deliver High Impact. </h2>
+        <p>A community-driven,design-centered innovation hub fostering technological<br> disruption,impact entrepreurship, and transformative leadership.</p>
+    
+        <button style="cursor: pointer;"> Our services &rarr;</button>
+    </div> 
+
+    <script>
+        const texts=[
+            "TECH LAB",
+            "MOBILE INNOVATION LAB",
+            "AI WORKSHOP",
+            "STARTUP CLINIC",
+            "STARTUP PARENTING",
+            "SME ACTIVATE",
+            "REACTOR PROGRAM",
+            "COMMUNITY HACK"
+        ];
+        const el =
+        document.getElementById("heading-text");
+        let i =0;
+        function rotate(){
+            el.style.opacity=0;
+            el.style.transform ="translateY(-20px)";
+            setTimeout(() => {
+                
+            el.textContent = 
+            texts[i];
+            el.style.transform = "translateY(20px)";
+            void  el.offsetwidth;
+            el.style.opacity = 1;
+            el.style.transform = "translateY(0)";
+             i=(i + 1)% texts.length;
+            },
+            500);
+        }
+    rotate();
+    setInterval(rotate,3000);
+    </script>  
+       
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>JongoHub-Official</title>
+</head>
+<body>
+    <header class="header flex items-center justify-between p-4 bg-black text-[#F0BE20] px-8">
+        <div class="logo">
+            <img src="./images/logo.jpg" alt="logo">
+        </div>              
+
+        <nav class="nav">
+            <ul class="nav-list flex items-center justify-between space-x-4">
+                <li class="nav-item"><a href="#">Home</a></li>
+                <li class="nav-item group relative">
+                    <a href="#">About <i class="fas fa-chevron-down text-sm"></i></a>
+                    <ul class="absolute left-0 mt-2 w-40 bg-white text-black rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 text-[#F0BE20] z-10">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Our Story</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Meet the Team</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Meet the board</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#">Services</a></li>
+                <li class="nav-item"><a href="#">Contact</a></li>            
+
+                <li class="nav-item group relative">
+                    <a href="#">Join Us <i class="fas fa-chevron-down text-sm"></i></a>
+                    <ul class="absolute left-0 mt-2 w-40 bg-white text-black rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 text-[#F0BE20] z-10">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Start Up Parenting Program</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Open JongoHub</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Community Parenting</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item group relative">
+                    <a href="#">Our Impact <i class="fas fa-chevron-down text-sm"></i></a>
+                    <ul class="absolute left-0 mt-2 w-40 bg-white text-black rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 text-[#F0BE20] z-10">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Impact Stories</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Impact Library</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Conferences</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <select name="language" id="language" class="bg-black text-[#F0BE20] p-2 rounded">
+            <option value="English">English</option>
+            <option value="English">French</option>
+            <option value="English">Arabic</option>
+        </select>
+
+                <!-- Add this button inside your <header>, before or after <nav> -->
+            <button id="menu-toggle" class="block md:hidden text-2xl text-[#F0BE20] focus:outline-none">
+            <i class="fas fa-bars"></i>
+            </button>
+    </header>
+    <div class="body">
+        <div id="headings">
+            <h1 id="heading-text">TECH LAB</h1>
+            <h1 id="heading-text">MOBILE INNOVATION LAB </h1>
+            <h1 id="heading-text">AI WORKSHOP</h1>
+            <h1 id="heading-text">STARTUP CLINIC</h1>
+            <h1 id="heading-text">STARTUP PARENTING</h1>
+            <h1 id="heading-text">SME ACTIVATE</h1>
+            <h1 id="heading-text">REACTOR PROGRAM</h1>
+            <h1 id="heading-text">COMMUNITY HACK</h1>
+        </div>
+    <div class="hero-section">
+        <h2>Empowering Africa's public and private<br>sectors to innovate and deliver High Impact. </h2>
+        <p>A community-driven,design-centered innovation hub fostering technological<br> disruption,impact entrepreurship, and transformative leadership.</p>
+    
+        <button style="cursor: pointer;"> Our services &rarr;</button>
+    </div> 
+
+    <script>
+        const texts=[
+            "TECH LAB",
+            "MOBILE INNOVATION LAB",
+            "AI WORKSHOP",
+            "STARTUP CLINIC",
+            "STARTUP PARENTING",
+            "SME ACTIVATE",
+            "REACTOR PROGRAM",
+            "COMMUNITY HACK"
+        ];
+        const el =
+        document.getElementById("heading-text");
+        let i =0;
+        function rotate(){
+            el.style.opacity=0;
+            el.style.transform ="translateY(-20px)";
+            setTimeout(() => {
+                
+            el.textContent = 
+            texts[i];
+            el.style.transform = "translateY(20px)";
+            void  el.offsetwidth;
+            el.style.opacity = 1;
+            el.style.transform = "translateY(0)";
+             i=(i + 1)% texts.length;
+            },
+            500);
+        }
+    rotate();
+    setInterval(rotate,3000);
+    </script>  
+     </div>  
+    <script src="script.js"></script>
+</body>
+</html>
